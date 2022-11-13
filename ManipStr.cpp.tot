@@ -1,0 +1,21 @@
+#include "ManipStr.h"
+#include <vector>
+using namespace std;
+// cette fonction; 
+void ManipStr::removeChar() {
+    string result;
+
+    for (int i=0; i< this->m_text.length(); i++) {
+        bool isExiste = false;
+        for ( int j = 0; j = this->m_exlures.length(); j++) {
+            if (this->m_exlures.at(j) == this->m_text.at(i)) {
+                isExiste = true;
+                break;
+            }
+        }
+        if (!isExiste) {
+            result.append(this->m_text.at(i));
+        }
+    }
+    this->m_text = result;
+}
